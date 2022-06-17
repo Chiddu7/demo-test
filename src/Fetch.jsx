@@ -12,7 +12,7 @@ function greetingReducer(state, action)
     switch (action.type){
         case 'Success':
             return {
-                error:null, 
+                error:null,
                 greeting:action.greeting
             }
         case 'Error':
@@ -45,12 +45,12 @@ const Fetch = ({url}) => {
         })
     }
 
-    const buttontext = buttonClicked ? 'Ok': 'Load Greeting';
+    const buttonText = buttonClicked ? 'Ok': 'Load Greeting';
 
     return (
         <div>
             <button onClick={() => fetchGreeting(url)} disabled={buttonClicked}>
-                {buttonText}
+                { buttonText }
             </button>
             { greeting && <h1>{greeting}</h1>}
             {error && <p role="alert">Oops, failed to fetch!</p>}
